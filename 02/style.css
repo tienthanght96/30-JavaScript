@@ -1,0 +1,54 @@
+html {
+    background: url("http://unsplash.it/1500/1000?image=881&blur=50");
+    background-size: cover;
+
+}
+body{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.clock{
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid white;
+    border-radius: 50%;
+    margin: 50px auto;
+    padding: 2rem;
+}
+.clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.clock-face .hour-hand{
+    position: absolute;
+    height: 5px;
+    background-color: white;
+    width: 50%;
+    top: 50%;
+    transform-origin: right;
+    transform: rotate(0deg);
+}
+.clock-face .min-hand{
+    position: absolute;
+    height: 5px;
+    background-color: white;
+    width: 50%;
+    top: 50%;
+    transform: rotate(0deg);
+    transform-origin: right;
+}
+.clock-face .second-hand{
+    position: absolute;
+    height: 2px;
+    background-color: white;
+    width: 50%;
+    top: 50%;
+    transform: rotate(0deg);
+    transform-origin: right;
+}
