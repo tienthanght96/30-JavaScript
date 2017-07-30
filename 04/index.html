@@ -105,13 +105,10 @@
     </div>
 </div>
 <script>
-    const category = document.querySelector('.mw-category');
-    const links = Array.from(category.querySelectorAll('a'));
-    console.log(links);
-    const context = links
-        .map(link => link.textContent);
-   let deList= context.filter(streetName => streetName.includes('de'));
-    console.log(deList);
+    let category = document.querySelector('.mw-category');
+    let links = Array.from(category.querySelectorAll('ul li a'));
+    let contents=  links.map(current => (current.textContent));
+    contents.filter(current => (current.includes('de'))).forEach(current=> console.log(current));
 </script>
 <script src="app.js"></script>
 </body>

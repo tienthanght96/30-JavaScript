@@ -64,3 +64,4 @@ inventors.reduce(function (live ,current) {
 },0);
 console.log('-------------age of inventors-----------');
 console.log(ageOfInventors.sort((firstEle, secondEle) => secondEle.age - firstEle.age));
+
