@@ -34,16 +34,42 @@ const domStrings = {
         console.log(domStrings.video['volume']);
     }
 
+    function handleProgress() {
+        let percent = (domStrings.video.currentTime/domStrings.video.duration)*100;
+        domStrings.progressBar.style.flexBasis=`${percent}%`;
+    }
+
+    function scrub(e) {
+        console.log(e.offsetX);
+        console.log(domStrings.progress.offsetWidth);
+        console.log(domStrings.video.duration);
+
+        domStrings.video.currentTime  = (e.offsetX / domStrings.progress.offsetWidth)*domStrings.video.duration;
+    }
+
 
     function addEvent() {
+        //video event
         domStrings.video.addEventListener('click', togglePlayVideo);
         domStrings.video.addEventListener('play', updateButtonPlayer);
         domStrings.video.addEventListener('pause', updateButtonPlayer);
+        domStrings.video.addEventListener('timeupdate', handleProgress);
+
+        // button play event
         domStrings.toggle.addEventListener('click', togglePlayVideo);
 
+        //skip button event
         Array.from(domStrings.skipButtons).forEach(current => current.addEventListener('click', skipTime));
 
-        Array.from(domStrings.ranges).forEach(current => current.addEventListener('click', handleRangeUpdate));
+        //range input event
+        Array.from(domStrings.ranges).forEach(current => current.addEventListener('change', handleRangeUpdate));
+        Array.from(domStrings.ranges).forEach(current => current.addEventListener('mousemove', handleRangeUpdate));
+
+
+
+        //event progress
+
+        domStrings.progress.addEventListener('click', scrub);
 
 
     }
