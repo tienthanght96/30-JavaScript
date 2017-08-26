@@ -1,0 +1,42 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: sans-serif;
+    background:#ffc600;
+}
+.inbox{
+    width: 400px;
+    margin: 50px auto;
+    text-transform: capitalize;
+}
+
+.inbox ul li {
+    list-style: none;
+    width: 100%;
+    display: flex;
+
+    background-color: white;
+    border-bottom: 1px solid #F1F1F1;
+}
+.inbox ul li p{
+    width: 90%;
+    border-left: 1px solid #D1E2FF;
+    padding: 15px ;
+}
+
+.inbox ul li input{
+    width: 10%;
+    margin: 15px;
+    display: block;
+}
+
+input:checked + p {
+    background:#F9F9F9;
+    text-decoration: line-through;
+}
+
+
+
