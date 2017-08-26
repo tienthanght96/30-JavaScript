@@ -39,7 +39,7 @@ body {
 .panel > * {
     margin: 0;
     width: 100%;
-    transition:  0.4s;
+    transition: 0.4s;
     flex: 1;
     display: flex;
     justify-content: center;
